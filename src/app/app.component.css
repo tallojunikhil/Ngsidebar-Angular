@@ -1,0 +1,9 @@
+
+.sidebar-header{
+  text-align: center;
+  text-line-through-color: blue;
+}
+.sidebar{
+  margin-top: 25%;
+  border: solid;
+}

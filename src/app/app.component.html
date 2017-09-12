@@ -1,0 +1,74 @@
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-heade">
+      <button type="button" (click)="_toggleSidebar()"class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button> <a class="navbar-brand" href="#Home"><img src="./src/logo.gif" height="50" width="50%" style="margin: -15px;"/></a>
+    </div>
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-default">
+        Search
+      </button>
+    </form>
+  </nav>
+<div class="row">
+  <div class="col-md-3">
+  <ng-sidebar-container [showBackdrop]="true">
+    <ng-sidebar [(opened)]="_opened">
+
+       <div class="sidebar">
+      <span class="sidebar-header">UI Elements</span>
+      <ul class="nav">
+        <li ng-class="{ selected: isActive('Bonds')}"><a [routerLink]="['/home']">home</a></li>
+        <li ng-class="{ selected: isActive('/Clients')}"><a [routerLink]="['/about']">about</a></li>
+        <li ng-class="{ selected: isActive('/Coupons')}"><a href="#/coupons">
+          Coupons</a></li>
+        <li ng-class="{ selected: isActive('/Events')}"><a href="#/events">
+          Events</a></li>
+        <li ng-class="{ selected: isActive('/Funds')}"><a href="#/funds">
+          Funds</a></li>
+        <li ng-class="{ selected: isActive('/Fx')}"><a href="#/fx">
+          Fx</a></li>
+        <li ng-class="{ selected: isActive('/Reports')}"><a href="#/reports">
+          Reports</a></li>
+        <li ng-class="{ selected: isActive('/Marks')}"><a href="#/marks">
+          Marks</a></li>
+      </ul>
+      <span class="sidebar-header">Other</span>
+      <ul class="nav">
+        <li ng-class="{ selected: isActive('/Trades')}"><a href="#/trades">
+          Trades</a></li>
+        <li ng-class="{ selected: isActive('/Indexes')}"><a href="#/indexes">
+          Indexes</a></li>
+      </ul>
+
+      <button closeSidebar>
+        Closes the sidebar
+      </button>
+    </div>
+
+
+</ng-sidebar>
+
+
+    <button (click)="_toggleSidebar()">Togglesidebar</button>
+  </ng-sidebar-container>
+  </div>
+
+
+
+
+<div clas="col-md-9 pull-right">
+<div>
+
+    <div class="outer-outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
